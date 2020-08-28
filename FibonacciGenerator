@@ -1,3 +1,5 @@
+# Generates nth Fibonacci number (up to 10e9) given any f0 and f1, modulo (1e9 +7)
+
 # firstly, initialise the 1,1,1,0 matrix to the power of 2^n for n up to 30, outside of the solve function
 
 # this means we have the components needed to quickly (O(logn)) generate powers of the 1,1,1,0 matrix on the fly and don't have to repeat any unnecessary calculations
@@ -6,6 +8,7 @@ matrix = [[1,1],[1,0]]
 zeros = [0]*(31)
 zeros[1] = matrix
 
+# adjust modulo here
 m = int(1e9 + 7)
 
 a1 = matrix[0][0]
@@ -77,7 +80,6 @@ def leftHandPower(n):
 
 def matmult(m, v):
 
-    mod = 1e9 + 7
     a1 = int(m[0][0])
     a2 = int(m[0][1])
 
